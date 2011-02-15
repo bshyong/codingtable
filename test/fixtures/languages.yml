@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  year: 
+  generation: MyString
+  category: MyString
+
+two:
+  name: MyString
+  year: 
+  generation: MyString
+  category: MyString
