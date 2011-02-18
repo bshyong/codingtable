@@ -4,7 +4,7 @@ class CreateLanguages < ActiveRecord::Migration
       t.string :name
       t.integer :year
       t.string :generation
-      t.string :category
+      t.belongs_to :category
 
       t.timestamps
     end

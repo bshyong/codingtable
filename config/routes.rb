@@ -1,7 +1,13 @@
 CodingTable::Application.routes.draw do
+  get "home/index"
+
+  get "home/admin"
+
+  resources :categories
+
   resources :languages
 
-  root :to => "languages#index"
+  root :to => "home#index"
 
 
   # The priority is based upon order of creation:
