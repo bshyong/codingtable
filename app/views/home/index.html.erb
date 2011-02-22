@@ -44,7 +44,7 @@
   <div class="<%= l.category.name.downcase %> cell cellcolumn<%=  i %>" id="<%= l.name %>" onmouseover="shiftRight('<%= l.name %>')" 
   onclick="changeColor('<%= l.name %>', 'red')" >
 	  <div class="nameLabel"><%= l.name  %></div>
-	  <div class="symbol"><%= l.name[0].capitalize  %></div>
+	  <div class="symbol"><%= l.name.slice(0,2).capitalize %></div>
   </div>
 <% end %>
 </div>
