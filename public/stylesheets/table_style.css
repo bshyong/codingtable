@@ -39,62 +39,6 @@ div.column{
 	display:inline-block;
 }
 
-div.cellcolumn0{
-	background-color:#F77C88;
-}
-div.cellcolumn1{
-	background-color:#F77C88;
-}
-div.cellcolumn2{
-	background-color:#FF9700;
-}
-div.cellcolumn3{
-	background-color:#FF9700;
-}
-div.cellcolumn4{
-	background-color:#FFE600;
-}
-div.cellcolumn5{
-	background-color:#FFE600;
-}
-div.cellcolumn6{
-	background-color:#FFE600;
-}
-div.cellcolumn7{
-	background-color:#FFE600;
-}
-div.cellcolumn8{
-	background-color:#FFE600;
-}
-div.cellcolumn9{
-	background-color:#CFFF5A;
-}
-div.cellcolumn10{
-	background-color:#CFFF5A;
-}
-div.cellcolumn11{
-	background-color:#CFFF5A;
-}
-div.cellcolumn12{
-	background-color:#54B9DD;
-}
-div.cellcolumn13{
-	background-color:#54B9DD;
-}
-div.cellcolumn14{
-	background-color:#54B9DD;
-}
-div.cellcolumn15{
-	background-color:#A05DDB;
-}
-div.cellcolumn16{
-	background-color:#ED5DE3;
-}
-div.cellcolumn17{
-	background-color:#ED5DE3;
-}
-
-
 /* Categories */
 div.symbol{
 	position:relative;	

@@ -80,11 +80,19 @@
   colorYears(): Arranges colors by year
   -------------------------------------------------------------------------------------------------*/
 	function highlightYear(arg){
-		//first revert everything to black
-	
-		//then apply any necessary colors
 		var id = '';
 		var year = '';
+		
+		//first revert everything to black
+		<% @columns.each_with_index do |c, i| %>
+	  		<% c.each do |l| %>
+	  		id = "<%= l.name %>";
+			id = id+'nameLabel';
+			$(id).tween('background-color', '#333333');		
+			<% end %>
+	 	<% end %>
+	
+		//then apply any necessary colors
 		<% @columns.each_with_index do |c, i| %>
 	  		<% c.each do |l| %>
 	  		id = "<%= l.name %>";
@@ -96,13 +104,43 @@
 			<% end %>
 	 	<% end %>		
 	}
+	
+	
+  /*-------------------------------------------------------------------------------------------------
+  resetColors(): changes cell colors to original config
+  -------------------------------------------------------------------------------------------------*/
+	function resetColors(){
+		var id='';
+		var col=0;
+		<% @columns.each_with_index do |c, i| %>
+	  		<% c.each do |l| %>
+		  		id = "<%= l.name %>";
+				col = <%=  i %>;
+				
+				if(col<=1)
+					$(id).tween('background-color', red);
+				else if(col<=3)
+					$(id).tween('background-color', orange);		
+				else if(col<=8)
+					$(id).tween('background-color', yellow);		
+				else if(col<=11)
+					$(id).tween('background-color', green);		
+				else if(col<=14)
+					$(id).tween('background-color', blue);		
+				else if(col<=15)
+					$(id).tween('background-color', purple);		
+				else if(col<=16)
+					$(id).tween('background-color', magenta);				
+			<% end %>
+	 	<% end %>
+	}
 
 </script>
 
 
   <%= csrf_meta_tag %>
 </head>
-<body>
+<body onload="resetColors()">
 
 <%= yield %>
 
