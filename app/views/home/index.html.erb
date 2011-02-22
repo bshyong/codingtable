@@ -1,11 +1,16 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
+
 <p>
-  <% @languages.each do |l| %>
+  <% @columns.each_with_index do |c, i| %>
+<div class="column" id="<%=  i %>">
+  <% c.each do |l| %>
   <div class="<%= l.category.name.downcase %> cell" id="<%= l.name %>">
 	  <div class="nameLabel"><%= l.name  %></div>
 	  <div class="symbol"><%= l.name[0].capitalize  %></div>
   </div>
+<% end %>
+</div>
   <% end %>
 </p>
 
