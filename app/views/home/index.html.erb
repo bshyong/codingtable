@@ -7,7 +7,7 @@
   <% c.each do |l| %>
   <div class="<%= l.category.name.downcase %> cell" id="<%= l.name %>">
 	  <div class="nameLabel"><%= l.name  %></div>
-	  <div class="symbol"><%= l.name.slice(0,1) %></div>
+	  <div class="symbol"><%= l.name.slice(0,2).capitalize %></div>
   </div>
 <% end %>
 </div>
