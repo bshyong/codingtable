@@ -1,3 +1,4 @@
+/* General Styles */
 body {
 	color:#000000;
 }
@@ -6,7 +7,8 @@ div.cell{
 	position:relative;
 	width:80px;
 	height:100px;
-	margin:2px;
+	margin-top:3px;
+	margin-bottom:3px;
 	
 	background-color:#F0F0F0;
 	color:aqua;
@@ -21,6 +23,78 @@ div.nameLabel{
 	background-color:black;
 }
 
+/* Legend */
+div#legend{
+	
+}
+
+
+
+
+
+/* Columns */
+div.column{
+	margin:-1px;
+	padding:0;
+	display:inline-block;
+}
+
+div.cellcolumn0{
+	background-color:#F77C88;
+}
+div.cellcolumn1{
+	background-color:#F77C88;
+}
+div.cellcolumn2{
+	background-color:#FF9700;
+}
+div.cellcolumn3{
+	background-color:#FF9700;
+}
+div.cellcolumn4{
+	background-color:#FFE600;
+}
+div.cellcolumn5{
+	background-color:#FFE600;
+}
+div.cellcolumn6{
+	background-color:#FFE600;
+}
+div.cellcolumn7{
+	background-color:#FFE600;
+}
+div.cellcolumn8{
+	background-color:#FFE600;
+}
+div.cellcolumn9{
+	background-color:#CFFF5A;
+}
+div.cellcolumn10{
+	background-color:#CFFF5A;
+}
+div.cellcolumn11{
+	background-color:#CFFF5A;
+}
+div.cellcolumn12{
+	background-color:#54B9DD;
+}
+div.cellcolumn13{
+	background-color:#54B9DD;
+}
+div.cellcolumn14{
+	background-color:#54B9DD;
+}
+div.cellcolumn15{
+	background-color:#A05DDB;
+}
+div.cellcolumn16{
+	background-color:#ED5DE3;
+}
+div.cellcolumn17{
+	background-color:#ED5DE3;
+}
+
+
 /* Categories */
 div.symbol{
 	position:relative;	
@@ -31,6 +105,8 @@ div.symbol{
 	font-size:50px;
 	color:white;
 }
+
+/*
 div.array{
 	background-color:#008000;
 }
@@ -38,3 +114,58 @@ div.array{
 div.oo{
 	background-color:#999999;
 }
+*/
+
+
+
+#menu-container {
+	display:block;
+	position:relative;
+	width:700px;
+	margin:0px auto 0px;
+	font-size:11px;
+}
+#drop_down_menu {
+	display:block;
+	position:absolute;
+	clear:both;
+	margin:0px;
+	padding:0px;
+	text-align:left;
+	list-style-type:none;
+	text-align:center;
+	width:700px;
+	float:none;
+	left:0px;
+	top:0px;
+}
+#drop_down_menu li {
+	font-size:12px;
+	font-weight:bold;
+	float:left;
+	color:#11a2db;
+	padding:5px;
+	cursor:pointer;
+	background:#333333;
+	width:150px;
+}
+#drop_down_menu li ul {
+	margin:0px;
+	padding:0px;
+	list-style-type:none;
+	padding-top:10px;
+}
+#drop_down_menu li ul li {
+	display:block;
+	float:none;
+	clear:both;
+}
+#drop_down_menu li ul li a {
+	color:#FFFFFF;
+	font-weight:normal;
+	text-decoration:none;
+	display:block;
+}
+
+
+
