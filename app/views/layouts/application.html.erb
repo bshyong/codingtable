@@ -11,7 +11,23 @@
   <%= javascript_include_tag 'mootools-1.2-core.js' %>
   <%= javascript_include_tag 'mootools-1.2-more.js' %>
   
+  
+<!-- Javascript with Embedded Ruby / Won't work in .js file-->
   <script language="javascript" type="text/javascript">	
+ /*-------------------------------------------------------------------------------------------------
+	Global Variables
+   -------------------------------------------------------------------------------------------------*/
+	var red = '#F77C88';
+	var orange = '#FF9700';
+	var yellow = '#FFE600';
+	var green = '#CFFF5A';
+	var blue = '#54B9DD';
+	var purple = '#A05DDB';
+	var magenta = '#ED5DE3';
+  
+  /*-------------------------------------------------------------------------------------------------
+	Menu Sliders
+   -------------------------------------------------------------------------------------------------*/
 	window.addEvent('domready', function(){
 		$('drop_down_menu').getElements('li.menu').each( function( elem ){
 			var list = elem.getElement('ul.links');	
@@ -28,6 +44,38 @@
 			});	
 		})
 	});	
+	
+	
+ /*-------------------------------------------------------------------------------------------------
+	colorYears(): Arranges colors by year
+  -------------------------------------------------------------------------------------------------*/
+	function colorYears(){
+		var id = '';
+		var year = '';
+		<% @columns.each_with_index do |c, i| %>
+	  		<% c.each do |l| %>
+	  		id = "<%= l.name %>";
+			year = "<%= l.year %>";
+	
+			if(year<1960)
+				$(id).tween('background-color', red);
+			else if(1960<=year && year<1970)
+				$(id).tween('background-color', orange);
+			else if(1970<=year && year<1980)
+				$(id).tween('background-color', yellow);
+			else if(1980<=year && year<1990)
+				$(id).tween('background-color', green);
+			else if(1990<=year && year<2000)
+				$(id).tween('background-color', blue);
+			else if(2000<=year && year<2010)
+				$(id).tween('background-color', purple);
+			else if(2010<=year && year<2020)
+				$(id).tween('background-color', red);
+			else if(2020<=year && year<2030)
+				$(id).tween('background-color', orange);
+			<% end %>
+	 	<% end %>
+	}
 </script>
 
 

@@ -1,0 +1,60 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<p>
+	<!-- legend -->
+		
+<div class="header">
+	<div id="menu-container">	
+		<ul id="drop_down_menu">
+			<li class="menu">Menu 1
+				<ul class="links">
+					<li><a href="#">Link 1</a></li>
+					<li><a href="#">Link 2</a></li>
+
+				</ul>
+			</li>
+			<li class="menu">Menu 2
+				<ul class="links">
+					<li><a href="#">Link 1</a></li>
+					<li><a href="#">Link 2</a></li>
+					<li><a href="#">Link 3</a></li>
+				</ul>
+
+			</li>
+			<li class="menu">Menu 3
+				<ul class="links">
+					<li><a href="#">Link 1</a></li>
+					<li><a href="#">Link 2</a></li>
+					<li><a href="#">Link 3</a></li>
+					<li><a href="#">Link 4</a></li>
+
+				</ul>
+			</li>
+
+		</ul>
+	</div>
+</div>
+
+
+	<!-- create the cells by looping through the double array-->
+  <% @columns.each_with_index do |c, i| %>
+<div class="column" id="column<%=  i %>">
+  <% c.each do |l| %>
+  <div class="<%= l.category.name.downcase %> cell cellcolumn<%=  i %>" id="<%= l.name %>" onmouseover="shiftRight('<%= l.name %>')" 
+  onclick="changeColor('<%= l.name %>', 'red')" >
+	  <div class="nameLabel"><%= l.name  %></div>
+	  <div class="symbol"><%= l.name.slice(0,2).capitalize %></div>
+  </div>
+<% end %>
+</div>
+  <% end %>
+</p>
+
+<p>
+	<!-- admin controls -->
+  <b>Admin controls</b>
+  <br />
+<%= link_to 'Languages', :controller => "languages", :action => "index" %>
+<%= link_to 'Categories', :controller => "categories", :action => "index" %>
+</p>

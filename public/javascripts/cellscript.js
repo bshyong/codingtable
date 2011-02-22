@@ -2,11 +2,39 @@
  * @author Alice
  */
 
+//global variables
+var red = '#F77C88';
+var orange = '#FF9700';
+var yellow = '#FFE600';
+var green = '#CFFF5A';
+var blue = '#A05DDB';
+var purple = '#54B9DD';
+var magenta = '#A05DDB';
+
+function check(){
+	alert("checking!");
+}
+
 function changeColor(arg, color){
 	$(arg).style.backgroundColor = color;
 	//$(arg).tween('opacity',0);
 }
 
+function highlightYear(arg){
+	alert(arg);
+}
+
+
+
+
+
+
+
+
+
+
+
+//FIX LATER
 function shiftRight(arg){
 	var curPos = parseFloat($(arg).getStyle("left"));
 	var newPos = curPos + 20;

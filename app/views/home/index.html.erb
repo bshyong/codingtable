@@ -7,22 +7,28 @@
 <div class="header">
 	<div id="menu-container">	
 		<ul id="drop_down_menu">
-			<li class="menu">Menu 1
+			<li class="menu">Default
 				<ul class="links">
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
+					<li><a href="#">Reset</a></li>
 
 				</ul>
 			</li>
-			<li class="menu">Menu 2
+			<li class="menu"><span onmousedown="colorYears()">Year</span>
 				<ul class="links">
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
+					<li><a href="#">1950s+older</a></li>
+					<li><a href="#">1960s</a></li>
+					<li><a href="#">1970s</a></li>
+					<li><a href="#">1980s</a></li>
+					<li><a href="#">1990s</a></li>
+					<li><a href="#">2000s</a></li>
+					<!--testing-->
+					<li><a href="javascript:highlightYear(2010)">2010s</a></li>
+					<li><a href="javascript:highlightYear(2020)">2020s</a></li>
+					<li><a href="javascript:highlightYear(2030)">2030s</a></li>
 				</ul>
 
 			</li>
-			<li class="menu">Menu 3
+			<li class="menu">Category
 				<ul class="links">
 					<li><a href="#">Link 1</a></li>
 					<li><a href="#">Link 2</a></li>
@@ -38,17 +44,18 @@
 
 
 	<!-- create the cells by looping through the double array-->
-  <% @columns.each_with_index do |c, i| %>
-<div class="column" id="column<%=  i %>">
-  <% c.each do |l| %>
-  <div class="<%= l.category.name.downcase %> cell cellcolumn<%=  i %>" id="<%= l.name %>" onmouseover="shiftRight('<%= l.name %>')" 
-  onclick="changeColor('<%= l.name %>', 'red')" >
-	  <div class="nameLabel"><%= l.name  %></div>
-	  <div class="symbol"><%= l.name.slice(0,2).capitalize %></div>
-  </div>
-<% end %>
-</div>
-  <% end %>
+ <% @columns.each_with_index do |c, i| %>
+	<div class="column" id="column<%=  i %>">
+  	<% c.each do |l| %>
+  		<div class="<%= l.category.name.downcase %> cell cellcolumn<%=  i %>" id="<%= l.name %>"  
+  		onclick="changeColor('<%= l.name %>', 'magenta')" >
+	  		<div class="nameLabel"><%= l.name  %></div>
+	  		<div class="symbol"><%= l.name.slice(0,2).capitalize %></div>
+  		</div>
+	<% end %>
+	</div>
+ <% end %>
+ 
 </p>
 
 <p>
