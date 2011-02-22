@@ -20,9 +20,6 @@ function changeColor(arg, color){
 	//$(arg).tween('opacity',0);
 }
 
-function highlightYear(arg){
-	alert(arg);
-}
 
 
 

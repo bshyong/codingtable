@@ -49,7 +49,7 @@
   	<% c.each do |l| %>
   		<div class="<%= l.category.name.downcase %> cell cellcolumn<%=  i %>" id="<%= l.name %>"  
   		onclick="changeColor('<%= l.name %>', 'magenta')" >
-	  		<div class="nameLabel"><%= l.name  %></div>
+	  		<div class="nameLabel" id="<%= l.name %>nameLabel"><%= l.name  %></div>
 	  		<div class="symbol"><%= l.name.slice(0,2).capitalize %></div>
   		</div>
 	<% end %>
