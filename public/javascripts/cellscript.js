@@ -15,9 +15,9 @@ function check(){
 	alert("checking!");
 }
 
-function changeColor(arg, color){
-	$(arg).style.backgroundColor = color;
-	//$(arg).tween('opacity',0);
+function clearColor(arg){
+	//$(arg).style.backgroundColor = color;
+	$(arg).tween('opacity',0);
 }
 
 

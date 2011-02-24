@@ -249,7 +249,7 @@
 	<div class="column" id="column<%=  i %>">
   	<% c.each do |l| %>
   		<div class="<%= l.category.name.downcase %> cell cellcolumn<%=  i %>" id="<%= l.name %>"  
-  		onclick="clearColor('<%= l.name %>')" >
+  		onclick="changeColor('<%= l.name %>', 'magenta')" >
 	  		<div class="nameLabel" id="<%= l.name %>nameLabel"><%= l.name  %></div>
 	  		<div class="symbol"><%= l.abbreviation %></div>
   		</div>

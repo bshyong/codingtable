@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CodingTable</title>
+  <!--
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.2.1/mootools-yui-compressed.js"></script>
+  -->
+  <%= stylesheet_link_tag :all %>
+  <%#= javascript_include_tag :all %>
+  <%= javascript_include_tag 'cellscript.js' %>
+  <%= javascript_include_tag 'mootools-1.2-core.js' %>
+  <%= javascript_include_tag 'mootools-1.2-more.js' %>
+  
+  <%= csrf_meta_tag %>
+  <script type="text/javascript">
+  var uservoiceOptions = {
+    key: 'codingtable',
+    host: 'codingtable.uservoice.com',
+    forum: '103887',
+    alignment: 'right',
+    background_color:'#0066cc',
+    text_color: 'white',
+    hover_color: '#FF9700',
+    lang: 'en',
+    showTab: true
+  };
+  function _loadUserVoice() {
+    var s = document.createElement('script');
+    s.src = ("https:" == document.location.protocol ? "https://" : "http://") + "cdn.uservoice.com/javascripts/widgets/tab.js";
+    document.getElementsByTagName('head')[0].appendChild(s);
+  }
+  _loadSuper = window.onload;
+  window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
+</script>
+
+
+</head>
+<body onload="resetColors()">
+
+<%= yield %>
+
+</body>
+</html>
