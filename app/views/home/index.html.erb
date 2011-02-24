@@ -74,7 +74,8 @@
 	  		<% c.each do |l| %>
 	  		id = "<%= l.name %>";
 			id = id+'nameLabel';
-			$(id).tween('background-color', '#333333');		
+			$(id).tween('background-color', '#333333');
+                        $(id).style.color='#FFFFFF';
 			<% end %>
 	 	<% end %>
 	
@@ -83,9 +84,10 @@
 	  		<% c.each do |l| %>
 	  		id = "<%= l.name %>";
 			year = "<%= l.year %>";
-			if(arg == year){
+			if(arg <= year && year < arg+10){
 				id = id+'nameLabel';
-				$(id).tween('background-color', '#FFE600');		
+				$(id).tween('background-color', '#FFFFFF');
+                                $(id).style.color='#000000';
 			}
 			<% end %>
 	 	<% end %>		
@@ -119,7 +121,8 @@
 					$(id).tween('background-color', magenta);		
 					
 				id = id+'nameLabel';
-				$(id).tween('background-color', '#333333');				
+				$(id).tween('background-color', '#333333');
+                                $(id).style.color='#FFFFFF';
 			<% end %>
 	 	<% end %>
 		
@@ -189,7 +192,7 @@
   		<div class="<%= l.category.name.downcase %> cell cellcolumn<%=  i %>" id="<%= l.name %>"  
   		onclick="changeColor('<%= l.name %>', 'magenta')" >
 	  		<div class="nameLabel" id="<%= l.name %>nameLabel"><%= l.name  %></div>
-	  		<div class="symbol"><%= l.name.slice(0,2).capitalize %></div>
+	  		<div class="symbol"><%= l.abbreviation %></div>
   		</div>
 	<% end %>
 	</div>

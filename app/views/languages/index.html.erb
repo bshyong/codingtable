@@ -5,6 +5,7 @@
     <th>Name</th>
     <th>Year</th>
     <th>Category</th>
+    <th>Abbreviation</th>
     <th>Url</th>
     <th></th>
     <th></th>
@@ -15,7 +16,8 @@
   <tr>
     <td><%= language.name %></td>
     <td><%= language.year %></td>
-    <td><%= language.category %></td>
+    <td><%= Category.find(language.category_id).name %></td>
+    <td><%=  language.abbreviation %></td>
     <td><%= language.url %></td>
     <td><%= link_to 'Show', language %></td>
     <td><%= link_to 'Edit', edit_language_path(language) %></td>
