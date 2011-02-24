@@ -1,4 +1,10 @@
 class HomeController < ApplicationController
+
+  before_filter :authenticate, :only => "admin"
+
+
+  layout "application"
+
   def index
     @languages = Language.all
     @heights = [9, 9, 7, 7, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 8, 8]

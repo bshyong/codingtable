@@ -3,6 +3,8 @@ CodingTable::Application.routes.draw do
 
   get "home/admin"
 
+  
+
   resources :categories
 
   resources :languages
