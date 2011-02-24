@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CodingTable</title>
+  <!--
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.2.1/mootools-yui-compressed.js"></script>
+  -->
+  <%= stylesheet_link_tag :all %>
+  <%#= javascript_include_tag :all %>
+  <%= javascript_include_tag 'cellscript.js' %>
+  <%= javascript_include_tag 'mootools-1.2-core.js' %>
+  <%= javascript_include_tag 'mootools-1.2-more.js' %>
+  
+  
 <!-- Javascript with Embedded Ruby / Won't work in .js file-->
   <script language="javascript" type="text/javascript">	
  /*-------------------------------------------------------------------------------------------------
@@ -122,83 +136,16 @@
 				$(id).tween('background-color', '#333333');				
 			<% end %>
 	 	<% end %>
-		
-		//first revert everything to black
-		<% @columns.each_with_index do |c, i| %>
-	  		<% c.each do |l| %>
-	  		id = "<%= l.name %>";
-			id = id+'nameLabel';
-			$(id).tween('background-color', '#333333');		
-			<% end %>
-	 	<% end %>
 	}
 
 </script>
 
 
-<p>
-	<!-- legend -->
-		
-<div class="header">
-	<div id="menu-container">	
-		<ul id="drop_down_menu">
-			<li class="menu" onclick="resetColors()">Controls
-				<ul class="links">
+  <%= csrf_meta_tag %>
+</head>
+<body onload="resetColors()">
 
-				</ul>
-			</li>
-			<li class="menu"><span onmousedown="colorYears()">Year</span>
-				<ul class="links">
-					<li><a href="javascript:highlightYear(1950)">1950s+older</a></li>
-					<li><a href="javascript:highlightYear(1960)">1960s</a></li>
-					<li><a href="javascript:highlightYear(1970)">1970s</a></li>
-					<li><a href="javascript:highlightYear(1980)">1980s</a></li>
-					<li><a href="javascript:highlightYear(1990)">1990s</a></li>
-					<li><a href="javascript:highlightYear(2000)">2000s</a></li>
-					<!--testing-->
-					<li><a href="javascript:highlightYear(2010)">2010s</a></li>
-					<li><a href="javascript:highlightYear(2020)">2020s</a></li>
-					<li><a href="javascript:highlightYear(2030)">2030s</a></li>
-				</ul>
+<%= yield %>
 
-			</li>
-			<li class="menu">Category
-				<ul class="links">
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
-					<li><a href="#">Link 4</a></li>
-					<li><a href="#">Link 4</a></li>
-					<li><a href="#">Link 4</a></li>
-					<li><a href="#">Link 4</a></li>
-
-				</ul>
-			</li>
-
-		</ul>
-	</div>
-</div>
-
-
-	<!-- create the cells by looping through the double array-->
- <% @columns.each_with_index do |c, i| %>
-	<div class="column" id="column<%=  i %>">
-  	<% c.each do |l| %>
-  		<div class="<%= l.category.name.downcase %> cell cellcolumn<%=  i %>" id="<%= l.name %>"  
-  		onclick="changeColor('<%= l.name %>', 'magenta')" >
-	  		<div class="nameLabel" id="<%= l.name %>nameLabel"><%= l.name  %></div>
-	  		<div class="symbol"><%= l.name.slice(0,2).capitalize %></div>
-  		</div>
-	<% end %>
-	</div>
- <% end %>
- 
-</p>
-
-<p>
-	<!-- admin controls -->
-  <b>Admin controls</b>
-  <br />
-<%= link_to 'Languages', :controller => "languages", :action => "index" %>
-<%= link_to 'Categories', :controller => "categories", :action => "index" %>
-</p>
+</body>
+</html>
