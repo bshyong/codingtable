@@ -12,7 +12,7 @@
 
 <p>
   <b>Category:</b>
-  <%= @language.category %>
+  <%= Category.find(@language.category_id).name %>
 </p>
 
 <p>

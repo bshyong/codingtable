@@ -1,0 +1,104 @@
+ENIAC,Other,1943,E,Object Oriented
+FORTRAN,Object Oriented,1955,,Functional
+LISP,Other,1958,,Scripting
+COBOL,Procedural,1959,,Procedural
+C,Systems Programming,1972,C,Esoteric
+Smalltalk,Object Oriented,1973,St,Compiled
+Prolog,Logic Programming,1972,,Other
+Pascal,Compiled,1970
+Scheme,Functional,1975
+SQL,Other,1978
+C++,Compiled,1983,Cp
+Objective-C,Object Oriented,1983,Oc
+Ada,Procedural,1983,A
+Erlang,Functional,1986,Cl
+Common Lisp,Object Oriented,1984
+Haskell,Functional,1990
+Python,Object Oriented,1991,P
+Visual Basic,Object Oriented,1991,Vb
+Ruby,Object Oriented,1993,Ru
+Lua,Object Oriented,1993,L
+Java,Object Oriented,1995
+Delphi,Procedural,1995,J
+JavaScript,Scripting,1995,Js
+PHP,Scripting,1995,Ph
+Rebol,Scripting,1997
+D,Object Oriented,1999
+C#,Object Oriented,2001
+Visual Basic .NET,Object Oriented,2001,N
+F#,Functional,2002
+Scala,Functional,2003
+Factor,Other,2003
+Windows Power Shell,Scripting,2006,Wp
+Clojure,Functional,2007
+Groovy,Procedural,2007
+Go,Compiled,2009,G
+Goo,Object Oriented,2003
+Dylan,Object Oriented,1990
+Cobra,Object Oriented,2006
+Cold Fusion,Object Oriented,1995,Cf
+Curl,Object Oriented,1998
+E,Object Oriented,1997
+Fancy,Object Oriented,2010
+Smalltalk,Object Oriented,1972
+BLISS,Procedural,1970
+Fortran,Procedural,1957
+HyperTalk,Procedural,1987,Ht
+JOVIAL,Procedural,1960
+MATLAB,Other,1970
+MUMPS,Procedural,1966
+Eiffel,Object Oriented,1986
+Pico,Other,1997
+AppleScript,Scripting,1993,As
+AWK,Scripting,1977
+BeanShell,Scripting,2000,Bs
+ECMAScript,Scripting,1997,Es
+F-Script,Scripting,2010,Fs
+Falcon,Scripting,2003
+Frink,Scripting,2001
+ICI,Scripting,1980
+Io,Scripting,2002
+JASS,Scripting,2001
+Tea,Scripting,1997
+MEL,Scripting,1998
+Perl,Scripting,1987
+PIKT,Scripting,2007
+R,Scripting,1993
+REXX,Scripting,1979
+LiveCode,Scripting,1993,Lc
+SLang,Scripting,1992,Sl
+VBScript,Scripting,1996,Vs
+Befunge,Esoteric,1993
+Brainfuck,Esoteric,1993,Bf
+Chef,Esoteric,1990
+FALSE,Esoteric,1993
+INTERCAL,Esoteric,1972
+LOLCODE,Esoteric,2007
+Malbolge,Esoteric,1998
+Piet,Esoteric,1990
+ZOMBIE,Esoteric,1993
+Shakespeare,Esoteric,2000
+WhiteSpace,Esoteric,2003,Ws
+BCPL,Procedural,1966
+Harbour,Procedural,1999
+occam,Procedural,1983
+PCASTL,Procedural,2008
+Rapira,Procedural,1987
+XL,Procedural,2000
+Charity,Functional,1996
+Clean,Functional,1987
+Miranda,Functional,1985
+Hop,Functional,2006
+Kite,Functional,2006
+Joy,Functional,2001
+Mathematica,Functional,1988
+OPS5,Functional,1978
+REFAL,Functional,1968
+Turing,Compiled,1982
+WinDev,Compiled,1993,Wd
+X++,Compiled,2008,Xp
+FAP,Other,1965,,Assembly
+GAS,Other,2009,,Assembly
+PILOT,Other,1991
+Bash,Other,1989
+MetaPost,,1994,Mp

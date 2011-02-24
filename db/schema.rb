@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110222083410) do
+ActiveRecord::Schema.define(:version => 20110224070208) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20110222083410) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "url"
+    t.string   "abbreviation"
   end
 
   add_index "languages", ["category_id"], :name => "index_languages_on_category_id"
