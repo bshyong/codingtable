@@ -2,8 +2,6 @@ CodingTable::Application.routes.draw do
   get "home/index"
 
   get "home/admin"
-  get "home/import"
-  post "home/import2"
 
   resources :categories
 
