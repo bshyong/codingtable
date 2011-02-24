@@ -55,15 +55,42 @@
 			else if(2000<=year && year<2010)
 				$(id).tween('background-color', purple);
 			else if(2010<=year && year<2020)
+				$(id).tween('background-color', magenta);
+			<% end %>
+	 	<% end %>
+	}
+	
+	
+	/*-------------------------------------------------------------------------------------------------
+	colorCategories(): Arranges categories by year
+  -------------------------------------------------------------------------------------------------*/
+	function colorCategories(){
+		var id = '';
+		var cat = '';
+		<% @columns.each_with_index do |c, i| %>
+	  		<% c.each do |l| %>
+	  		id = "<%= l.name %>";
+			cat = "<%= l.category.name %>";
+			if(cat == 'Esoteric')
 				$(id).tween('background-color', red);
-			else if(2020<=year && year<2030)
+			else if(cat=='Object Oriented')
 				$(id).tween('background-color', orange);
+			else if(cat=='Procedural')
+				$(id).tween('background-color', yellow);
+			else if(cat=='Compiled')
+				$(id).tween('background-color', green);
+			else if(cat=='Functional')
+				$(id).tween('background-color', blue);
+			else if(cat=='Scripting')
+				$(id).tween('background-color', purple);
+			else if(cat=='Other')
+				$(id).tween('background-color', magenta);
 			<% end %>
 	 	<% end %>
 	}
 	
 /*-------------------------------------------------------------------------------------------------
-  colorYears(): Arranges colors by year
+  highlightYear(): highlights colors by year
   -------------------------------------------------------------------------------------------------*/
 	function highlightYear(arg){
 		var id = '';
@@ -85,6 +112,38 @@
 	  		id = "<%= l.name %>";
 			year = "<%= l.year %>";
 			if(arg <= year && year < arg+10){
+				id = id+'nameLabel';
+				$(id).tween('background-color', '#FFFFFF');
+                                $(id).style.color='#000000';
+			}
+			<% end %>
+	 	<% end %>		
+	}
+	
+	
+	/*-------------------------------------------------------------------------------------------------
+  highlightCategory(): highlights colors by category
+  -------------------------------------------------------------------------------------------------*/
+	function highlightCategory(arg){
+		var id = '';
+		var cat = '';
+		
+		//first revert everything to black
+		<% @columns.each_with_index do |c, i| %>
+	  		<% c.each do |l| %>
+	  		id = "<%= l.name %>";
+			id = id+'nameLabel';
+			$(id).tween('background-color', '#333333');
+                        $(id).style.color='#FFFFFF';
+			<% end %>
+	 	<% end %>
+	
+		//then apply any necessary colors
+		<% @columns.each_with_index do |c, i| %>
+	  		<% c.each do |l| %>
+	  		id = "<%= l.name %>";
+			cat = "<%= l.category.name %>";
+			if(arg == cat){
 				id = id+'nameLabel';
 				$(id).tween('background-color', '#FFFFFF');
                                 $(id).style.color='#000000';
@@ -140,12 +199,17 @@
 
 
 <p>
-	<!-- legend -->
+
+<!-- =========================== HTML STARTS HERE ===================================-->
+	
+<!-- legend -->
+
+<h1>Programming Languages: 1950's - Present</h1>
 		
 <div class="header">
 	<div id="menu-container">	
 		<ul id="drop_down_menu">
-			<li class="menu" onclick="resetColors()">Controls
+			<li class="menu" onclick="resetColors()">Reset
 				<ul class="links">
 
 				</ul>
@@ -158,22 +222,19 @@
 					<li><a href="javascript:highlightYear(1980)">1980s</a></li>
 					<li><a href="javascript:highlightYear(1990)">1990s</a></li>
 					<li><a href="javascript:highlightYear(2000)">2000s</a></li>
-					<!--testing-->
 					<li><a href="javascript:highlightYear(2010)">2010s</a></li>
-					<li><a href="javascript:highlightYear(2020)">2020s</a></li>
-					<li><a href="javascript:highlightYear(2030)">2030s</a></li>
 				</ul>
 
 			</li>
-			<li class="menu">Category
+			<li class="menu"><span onmousedown="colorCategories()">Category</span>
 				<ul class="links">
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
-					<li><a href="#">Link 4</a></li>
-					<li><a href="#">Link 4</a></li>
-					<li><a href="#">Link 4</a></li>
-					<li><a href="#">Link 4</a></li>
+					<li><a href="javascript:highlightCategory('Esoteric')">Esoteric</a></li>
+					<li><a href="javascript:highlightCategory('Object Oriented')">Object Oriented</a></li>
+					<li><a href="javascript:highlightCategory('Procedural')">Procedural</a></li>
+					<li><a href="javascript:highlightCategory('Compiled')">Compiled</a></li>
+					<li><a href="javascript:highlightCategory('Functional')">Functional</a></li>
+					<li><a href="javascript:highlightCategory('Scripting')">Scripting</a></li>
+					<li><a href="javascript:highlightCategory('Other')">Other</a></li>
 
 				</ul>
 			</li>
