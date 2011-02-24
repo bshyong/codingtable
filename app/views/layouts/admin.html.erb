@@ -6,11 +6,12 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.2.1/mootools-yui-compressed.js"></script>
   -->
   <%= stylesheet_link_tag :all %>
-  <%#= javascript_include_tag :defaults %>
-  <%= javascript_include_tag 'cellscript.js' %>
-  <%= javascript_include_tag 'mootools-1.2-core.js' %>
-  <%= javascript_include_tag 'mootools-1.2-more.js' %>
-  
+  <%= javascript_include_tag :defaults %>
+  <%#*prototype conflicts with mootools%>
+  <%#= javascript_include_tag 'cellscript.js' %>
+  <%#= javascript_include_tag 'mootools-1.2-core.js' %>
+  <%#= javascript_include_tag 'mootools-1.2-more.js' %>
+
   <%= csrf_meta_tag %>
   <script type="text/javascript">
   var uservoiceOptions = {
@@ -32,7 +33,7 @@
   _loadSuper = window.onload;
   window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
 </script>
-  <script type="text/javascript">
+<script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-21634592-1']);
@@ -45,6 +46,7 @@
   })();
 
 </script>
+
 </head>
 <body onload="resetColors()">
 
