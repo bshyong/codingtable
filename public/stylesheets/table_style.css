@@ -28,10 +28,6 @@ div#legend{
 	
 }
 
-
-
-
-
 /* Columns */
 div.column{
 	margin:-1px;
@@ -46,7 +42,7 @@ div.symbol{
 	padding-top:25px;
 	
 	font-family: "Arial Black";
-	font-size:50px;
+	font-size:45px;
 	color:white;
 }
 
