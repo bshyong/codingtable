@@ -17,19 +17,8 @@ function check(){
 
 function clearColor(arg){
 	//$(arg).style.backgroundColor = color;
-	$(arg).tween('opacity',0);
+	$(arg).tween('opacity',0.5);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 //FIX LATER
 function shiftRight(arg){

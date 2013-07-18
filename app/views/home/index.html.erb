@@ -1,5 +1,5 @@
 <!-- Javascript with Embedded Ruby / Won't work in .js file-->
-  <script language="javascript" type="text/javascript">	
+  <script language="javascript" type="text/javascript">
  /*-------------------------------------------------------------------------------------------------
 	Global Variables
    -------------------------------------------------------------------------------------------------*/
@@ -10,28 +10,28 @@
 	var blue = '#54B9DD';
 	var purple = '#A05DDB';
 	var magenta = '#ED5DE3';
-  
+
   /*-------------------------------------------------------------------------------------------------
 	Dropdown Menus
    -------------------------------------------------------------------------------------------------*/
 	window.addEvent('domready', function(){
 		$('drop_down_menu').getElements('li.menu').each( function( elem ){
-			var list = elem.getElement('ul.links');	
-			var myFx = new Fx.Slide(list).hide();			
+			var list = elem.getElement('ul.links');
+			var myFx = new Fx.Slide(list).hide();
 			elem.addEvents({
-				'mouseenter' : function(){ 					
+				'mouseenter' : function(){
 					myFx.cancel();
-					myFx.slideIn();					
+					myFx.slideIn();
 				},
-				'mouseleave' : function(){ 
+				'mouseleave' : function(){
 					myFx.cancel();
-					myFx.slideOut();					
+					myFx.slideOut();
 				}
-			});	
+			});
 		})
-	});	
-	
-	
+	});
+
+
  /*-------------------------------------------------------------------------------------------------
 	colorYears(): Arranges colors by year
   -------------------------------------------------------------------------------------------------*/
@@ -59,8 +59,8 @@
 			<% end %>
 	 	<% end %>
 	}
-	
-	
+
+
 	/*-------------------------------------------------------------------------------------------------
 	colorCategories(): Arranges categories by year
   -------------------------------------------------------------------------------------------------*/
@@ -88,14 +88,14 @@
 			<% end %>
 	 	<% end %>
 	}
-	
+
 /*-------------------------------------------------------------------------------------------------
   highlightYear(): highlights colors by year
   -------------------------------------------------------------------------------------------------*/
 	function highlightYear(arg){
 		var id = '';
 		var year = '';
-		
+
 		//first revert everything to black
 		<% @columns.each_with_index do |c, i| %>
 	  		<% c.each do |l| %>
@@ -105,7 +105,7 @@
                         $(id).style.color='#FFFFFF';
 			<% end %>
 	 	<% end %>
-	
+
 		//then apply any necessary colors
 		<% @columns.each_with_index do |c, i| %>
 	  		<% c.each do |l| %>
@@ -117,17 +117,17 @@
                                 $(id).style.color='#000000';
 			}
 			<% end %>
-	 	<% end %>		
+	 	<% end %>
 	}
-	
-	
+
+
 	/*-------------------------------------------------------------------------------------------------
   highlightCategory(): highlights colors by category
   -------------------------------------------------------------------------------------------------*/
 	function highlightCategory(arg){
 		var id = '';
 		var cat = '';
-		
+
 		//first revert everything to black
 		<% @columns.each_with_index do |c, i| %>
 	  		<% c.each do |l| %>
@@ -137,7 +137,7 @@
                         $(id).style.color='#FFFFFF';
 			<% end %>
 	 	<% end %>
-	
+
 		//then apply any necessary colors
 		<% @columns.each_with_index do |c, i| %>
 	  		<% c.each do |l| %>
@@ -149,10 +149,10 @@
                                 $(id).style.color='#000000';
 			}
 			<% end %>
-	 	<% end %>		
+	 	<% end %>
 	}
-	
-	
+
+
   /*-------------------------------------------------------------------------------------------------
   resetColors(): changes cell colors to original config
   -------------------------------------------------------------------------------------------------*/
@@ -163,34 +163,34 @@
 	  		<% c.each do |l| %>
 		  		id = "<%= l.name %>";
 				col = <%=  i %>;
-				
+
 				if(col<=1)
 					$(id).tween('background-color', red);
 				else if(col<=3)
-					$(id).tween('background-color', orange);		
+					$(id).tween('background-color', orange);
 				else if(col<=8)
-					$(id).tween('background-color', yellow);		
+					$(id).tween('background-color', yellow);
 				else if(col<=11)
-					$(id).tween('background-color', green);		
+					$(id).tween('background-color', green);
 				else if(col<=14)
-					$(id).tween('background-color', blue);		
+					$(id).tween('background-color', blue);
 				else if(col<=15)
-					$(id).tween('background-color', purple);		
+					$(id).tween('background-color', purple);
 				else if(col<=16)
-					$(id).tween('background-color', magenta);		
-					
+					$(id).tween('background-color', magenta);
+
 				id = id+'nameLabel';
 				$(id).tween('background-color', '#333333');
                                 $(id).style.color='#FFFFFF';
 			<% end %>
 	 	<% end %>
-		
+
 		//first revert everything to black
 		<% @columns.each_with_index do |c, i| %>
 	  		<% c.each do |l| %>
 	  		id = "<%= l.name %>";
 			id = id+'nameLabel';
-			$(id).tween('background-color', '#333333');		
+			$(id).tween('background-color', '#333333');
 			<% end %>
 	 	<% end %>
 	}
@@ -201,13 +201,13 @@
 <p>
 
 <!-- =========================== HTML STARTS HERE ===================================-->
-	
+
 <!-- legend -->
 
 <h1>Programming Languages: 1950's - Present</h1>
-		
+
 <div class="header">
-	<div id="menu-container">	
+	<div id="menu-container">
 		<ul id="drop_down_menu">
 			<li class="menu" onclick="resetColors()">Reset
 				<ul class="links">
@@ -243,12 +243,11 @@
 	</div>
 </div>
 
-
 	<!-- create the cells by looping through the double array-->
  <% @columns.each_with_index do |c, i| %>
 	<div class="column" id="column<%=  i %>">
   	<% c.each do |l| %>
-  		<div class="<%= l.category.name.downcase %> cell cellcolumn<%=  i %>" id="<%= l.name %>"  
+  		<div class="<%= l.category.name.downcase %> cell cellcolumn<%=  i %>" id="<%= l.name %>"
   		onclick="clearColor('<%= l.name %>')" >
 	  		<div class="nameLabel" id="<%= l.name %>nameLabel"><%= l.name  %></div>
 	  		<div class="symbol"><%= l.abbreviation %></div>
@@ -256,5 +255,5 @@
 	<% end %>
 	</div>
  <% end %>
- 
+
 </p>
